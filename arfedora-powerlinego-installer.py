@@ -114,7 +114,7 @@ def install_powerlinego():
 		if check!=0:
 			exit("Install PowerLine Go Fail.")
 			
-		check = subprocess.call("pkexec bash {}".format(install_file),shell=True)
+		check = subprocess.call("pkexec bash -e  {}".format(install_file),shell=True)
 		if check!=0:
 			exit("Install PowerLine Go Fail.")
 			
@@ -133,7 +133,7 @@ def install_git():
 		if check!=0:
 			exit("Install git Go Fail.")
 			
-		check = subprocess.call("pkexec bash {}".format(install_file),shell=True)
+		check = subprocess.call("pkexec bash -e {}".format(install_file),shell=True)
 		if check!=0:
 			exit("Install git Go Fail.")
 			
