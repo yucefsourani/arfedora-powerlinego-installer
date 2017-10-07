@@ -47,10 +47,12 @@ function _update_ps1() {
 if [ "$TERM" != "linux" ]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
+# powerline-go
 """
 
 
-zsh = """function powerline_precmd() {
+zsh = """# powerline-go
+function powerline_precmd() {
     PS1="$(/usr/bin/powerline-go -error $? -shell zsh -mode compatible)"
 }
 
@@ -66,11 +68,14 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+# powerline-go
 """
 
-fish = """function fish_prompt
+fish = """# powerline-go
+function fish_prompt
     /usr/bin/powerline-go -error $status -shell bare -mode compatible
 end
+# powerline-go
 """
 
 shell = {"bash" : [ os.path.join(home,".bashrc") , "function _update_ps1()", bash] ,
