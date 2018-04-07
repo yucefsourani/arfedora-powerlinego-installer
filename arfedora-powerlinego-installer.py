@@ -82,7 +82,9 @@ shell = {"bash" : [ os.path.join(home,".bashrc") , "function _update_ps1()", bas
 		 "zsh"  : [ os.path.join(home,".zshrc") , "function powerline_precmd()", zsh] ,
 		 "fish" : [ os.path.join(home,".config/fish/config.fish") , "function fish_prompt", fish]
 		 }
-		 
+
+
+
 def isconfigexists(configfile,check):
 	with open(configfile) as configf:
 		for line in configf:
@@ -98,6 +100,7 @@ def write_config(fileconfig,shellconfig):
 def shell_config():
 	for k,v in shell.items():
 		if k=="fish":
+			os.makedirs(os.path.join(home,".config/fish"),exist_ok=True)
 			if not os.path.isfile(v[0]):
 				with open(v[0],"w") as mfile:
 					pass
